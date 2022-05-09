@@ -1,0 +1,247 @@
+/* Police  font-family: 'Lato', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+/* import icone bootstrap et css le concernant */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
+
+/* A voir si besoin de changer le i par le dice par rapport aux icones bootstrap des boutons*/
+i{
+  color: green;
+}
+
+i.red{
+  color:red;
+}
+
+i.black{
+  color: black;
+}
+
+.dice{
+  font-size: 5em;
+}
+
+.bi-circle-fill{
+    font-size:0.5em;
+    color: #EB4D4D;
+    margin-left: 8px;
+  }
+
+/*Fin icone bootstrap*/
+
+body{
+  font-family: 'Lato', sans-serif;
+  height: 100vh;
+  width:100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainContainer{
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  position:absolute;
+  }
+
+.panel{
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  }
+
+.player1, .player2{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width:400px;
+  /* Besoin d'avoir une width en px pour faire fonctionner le flex wrap mais peut être 
+  à passer en paramètre pour les media queries */
+  justify-content: space-around; 
+  /* JUSTIFY CONTENT Temporaire à modifier pour positionner dans panel Player */
+}
+
+.inactive{
+  background-color: rgb(208, 208, 208);
+}
+
+.centeredButtons{
+  position: absolute;
+  left: 50%; /* centrage de l'absolute */
+  transform: translateX(-50%);  /* centrage de l'absolute */
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  /* background-color: blueviolet; */
+}
+
+.playerName{
+  font-size: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 100;
+  text-align: center;
+  width:auto;
+  display: flex;
+  align-items: center;
+  /* width: 40%; */
+  /* background-color: antiquewhite;  */
+}
+
+.playerGlobalScore{
+  font-size: 80px;
+  /* font-weight: 100; */
+  text-align: center;
+  color: #EB4D4D;
+  width:auto;
+  
+
+  /* width: 40%; */
+  /* background-color: antiquewhite;  */
+}
+
+.current, .global{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}
+
+.current{
+  justify-content: center;
+  background-color: #EB4D4D;
+}
+
+.global{
+  justify-content: space-between;
+}
+
+.playerCurrentScore{
+  font-size: 30px;
+  color: #fff;
+  width:auto;
+  /* width: 40%; */
+  /* background-color: antiquewhite;  */
+}
+
+.current p{
+  width:auto;
+  padding-right: 10px;
+  padding-left: 10px;
+  text-transform: uppercase;
+  margin-bottom: 0px;
+}
+
+.twoButtons{
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.bouton{
+  font-size: large;
+  padding: 5px;
+  margin: 5px;
+  background-color: transparent;
+  border: none;
+}
+
+.bouton i{
+  color: #EB4D4D;
+  margin: 4px;
+  font-size: 1.2em;
+}
+
+@media screen and (max-width: 800px) {
+  .player1, .player2 {
+    width:200px;
+  }
+
+  .centeredButtons{
+    position: absolute;
+    bottom : 50%;
+    left: 50%; 
+    transform: translate(-50%,50%); /* centrage de l'absolute */
+    height:auto;
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .playerName{
+    font-size: 25px;
+  }
+
+  .playerGlobalScore{
+    font-size: 40px;
+  }
+
+}
+
+@media screen and (max-width: 400px) {
+ 
+  .player1, .player2, 
+  .panel, .mainContainer, .body{
+    width:100%;
+    height:auto;
+  }
+  
+  .player1, .player2{
+    flex-direction: row;
+  }
+
+  .playerName, .playerGlobalScore, .playerCurrentScore{
+    width: 80%;
+  }
+
+  .centeredButtons{
+    position: static;
+    top : 0;
+    left: 0; 
+    transform: none; 
+    height:auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    align-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .twoButtons{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  .playerName{
+    font-size: 16px;
+  }
+
+  .playerGlobalScore{
+    font-size: 20px;
+  }
+
+  .dice{
+    font-size:3em;
+  }
+
+}
