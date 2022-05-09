@@ -13,10 +13,6 @@ i.red{
   color:red;
 }
 
-i.black{
-  color: black;
-}
-
 .dice{
   font-size: 5em;
 }
@@ -68,6 +64,10 @@ body{
 
 .inactive{
   background-color: rgb(208, 208, 208);
+}
+
+.active{
+  background-color: #fff;
 }
 
 .centeredButtons{
@@ -204,6 +204,8 @@ body{
   
   .player1, .player2{
     flex-direction: row;
+    /* justify-content: flex-end; */
+    /* A voir pour aligner les rectangle rouge de résultat temp indépendament du token 1er joueur */
   }
 
   .playerName, .playerGlobalScore, .playerCurrentScore{
