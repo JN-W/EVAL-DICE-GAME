@@ -28,6 +28,18 @@ $(function(){
     $('.player2 .playerGlobalScore').text(`${player2.nbrPointPartie}`)
   }
 
+  // Scoring reset function
+    resetScoring = function (){
+    player1.nbrPointRound = 0
+    player1.nbrPointPartie = 0
+    updateScoringDisplayP1()
+    // player1.currentActivePlayer = false
+    player2.nbrPointRound = 0
+    player2.nbrPointPartie = 0
+    updateScoringDisplayP2()
+    // player2.currentActivePlayer = false
+  }
+
     // Dice value display function
     updateDiceDisplay = function(diceValue){
       switch (diceValue){
@@ -62,10 +74,12 @@ $(function(){
 
       // End game management function
       endGame = function(){
-        if (player1.nbrPointPartie > 100){
+        if (player1.nbrPointPartie > 50){
           alert(`Bravo !! ${player1.nom} a gagné la partie !`)
-        } else if (player2.nbrPointPartie > 100){
+          resetScoring()
+        } else if (player2.nbrPointPartie > 50){
           alert(`Bravo !! ${player2.nom} a gagné la partie !`)
+          resetScoring()
         } 
       }
 
@@ -143,15 +157,15 @@ $('.btnRoll').click(function(){
 // Prise des points du round 
 $('.btnHold').click(function(){
   if (player1.currentActivePlayer){
-  player1.nbrPointPartie += player1.nbrPointRound
-  player1.nbrPointRound = 0
-  updateScoringDisplayP1()
-  switchP1P2()
-  endGame()
+    player1.nbrPointPartie += player1.nbrPointRound
+    player1.nbrPointRound = 0
+    updateScoringDisplayP1()
+    switchP1P2()
+    endGame()
   }
   else if (player2.currentActivePlayer){
     player2.nbrPointPartie += player2.nbrPointRound
-   player2.nbrPointRound = 0
+    player2.nbrPointRound = 0
     updateScoringDisplayP2()
     switchP2P1()
     endGame()
