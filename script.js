@@ -85,11 +85,11 @@ $(function(){
   
   // End game management function
   endGame = function(){
-    if (player1.nbrPointPartie > 50){
+    if (player1.nbrPointPartie > 100){
       alert(`Bravo !! ${player1.nom} a gagné la partie !`)
       resetScoring()
       hideButtons()
-    } else if (player2.nbrPointPartie > 50){
+    } else if (player2.nbrPointPartie > 100){
       alert(`Bravo !! ${player2.nom} a gagné la partie !`)
       resetScoring()
       hideButtons()
